@@ -28,11 +28,9 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHoratioToTariq() {
-        Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(hamletText);
-        
         hamletParser.changeHoratioToTariq();
-
+        Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletParser.getHamletData());
         Assert.assertFalse(matcher.find());
     }
 
